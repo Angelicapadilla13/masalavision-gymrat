@@ -29,4 +29,5 @@ Route::view("Profile", 'Profile');
 Route::view("Ratings", 'Ratings');
 Route::view("Products", 'Products');
 Route::view("Home", 'Home');
+Route::view("Users", 'Users');
 

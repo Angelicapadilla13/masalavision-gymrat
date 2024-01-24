@@ -11,6 +11,7 @@
     <style>
 
         body {
+            background: black            
             font-family: 'Inconsolata', monospace;
         }
 
@@ -45,7 +46,7 @@
             font-size: small;
             margin: 10px 0;
             color: #888;
-            /* font-family: Arial; */
+            font-family: Arial;
         }
 
         form {
@@ -163,7 +164,7 @@
         if (enteredPin.trim() === '') {
             alert('Please enter the Pincode.');
         } else if (enteredPin === '12345') {
-            window.location.href = '{{url('Home')}}';
+            window.location.href = '{{url('Users')}}';
         } else {
             alert('Incorrect Pincode! Please try again.');
         }
