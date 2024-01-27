@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
         <title>Gymrat</title>
     </head>
-    <body style="background-color: black;">
+    <body style="background-color: rgb(0, 0, 0);">
         <style>
             * {
                 font-family: 'Inconsolata', monospace;
@@ -20,7 +20,7 @@
             .navbar {
                 position: fixed;
                 text-align: center;
-                background-color: grey;
+                background-color: aqua;
                 z-index: 4;
                 left: -0.1px;
                 top: -0.1px;
@@ -28,22 +28,15 @@
                 height: 50px;
             }
 
-            button {
-                border-radius: 5px;
-            }
-            
-
             #Gymrat-logo {
                 position: relative;
-                left: -600px;
-                color: white;
-                font-family: fantasy;
+                left: -350px;
             }
 
             .interaction {
                 position: relative;
                 margin-top: -35px;
-                left: 300px;
+                left: 230px;
             }
             
             .users {
@@ -63,7 +56,7 @@
                 height: auto;
             }
             
-            #users {
+            #downloads {
                 position: relative;
                 font-size: 30px;
                 width: 100px;
@@ -162,8 +155,7 @@
                 width: 100%;
                 height: 585px;
                 text-align: center;
-                background-color: black;
-                color: white;
+                background-color: white;
             }
 
             .footer-txt-container {
@@ -203,71 +195,23 @@
                 height: auto; 
             }
 
-            @media only screen and (max-width: 601px) {
-                
-                .navbar {
-                    content-visibility: hidden;    
-                }
-
-                .graph {
-                    width: 350px; 
-                    height: 200px; 
-                    left: -15px;
-                    margin-top: 130px;
-                }
-
-                canvas {
-                    width: 400px;
-                }
-
-                #user {
-                    left: 10px;
-                }
-
-                #workout-p {
-                    left: -100px;
-                    font-size: small;
-                    color: white;
-                }
-
-                #phone {
-                    visibility: hidden;
-                }
-
-                .workouts-container {
-                    height: 100px;
-                }
-
-                .chest, .back, .abs, .biceps, .triceps, .shoulder, .legs {
-                    height: 150px;
-                }  
-
-                .footer {
-                    top: 2120px;
-                }
-
-            }
-
         </style>
         <section class="navbar">
             <p id="Gymrat-logo">Gymrat</p>
             <section class="interaction">
-                <a href="#user"><button>Users</button></a>
-                <a href="#chest"><button>Chest</button></a>
-                <a href="#back"><button>Back</button></a>
-                <a href="#abs"><button>Abs</button></a>
-                <a href="#biceps"><button>Biceps</button></a>
-                <a href="#triceps"><button>Triceps</button></a>
-                <a href="#shoulder"><button>Shoulder</button></a>
-                <a href="#legs"><button>Legs</button></a>
-                <a href="#abouts"><button>About us</button></a>
-                <a href="{{url('Login')}}"><button>Logout</button></a>
+                <a href="#downloads"><button>Home</button></a>
+                <a href=""><button>Users</button></a>
+                <a href=""><button>Chest</button></a>
+                <a href=""><button>Biceps</button></a>
+                <a href=""><button>Back</button></a>
+                <a href=""><button>Ratings</button></a>
+                <a href=""><button>About us</button></a>
+                <a href=""><button>Logout</button></a>
             </section>
         </section>
-
-        <section class="users" id="user">
-            <img  id="phone" src="{{URL('images/phone.png')}}">
-            <p id="users">Users</p>
+        <section class="users">
+            <img  id="phone" src="phone.png">
+            <p id="downloads">Downlods</p>
             <div class="graph">
                 <canvas id="myChart"></canvas>
             </div>
@@ -282,7 +226,7 @@
         </section>
         <section class="workouts-container">
             <p id="workout-p">Workout</p>
-            <section class="chest" id="chest">
+            <section class="chest">
                 <br><h1 style="color: white;">CHEST</h1><br>
                 <canvas id="010000" width="700" height="300;" style="margin: auto;"></canvas>
                 <canvas id="020000" width="600" height="200"></canvas>
@@ -291,7 +235,7 @@
                 <canvas id="050000" width="600" height="200"></canvas>
                 <canvas id="060000" width="600" height="200"></canvas>
             </section>
-                <section class="back" id="back">
+                <section class="back">
                     <br><h1 style="color: white;">BACK</h1><br>
                     <canvas id="011000" width="700" height="300;" style="margin: auto;"></canvas>
                     <canvas id="022000" width="600" height="200"></canvas>
@@ -300,7 +244,7 @@
                     <canvas id="055000" width="600" height="200"></canvas>
                     <canvas id="066000" width="600" height="200"></canvas>
                 </section>
-                    <section class="abs" id="abs">
+                    <section class="abs">
                         <br><h1 style="color: white;">ABS</h1><br>
                         <canvas id="011100" width="700" height="300;" style="margin: auto;"></canvas>
                         <canvas id="022200" width="600" height="200"></canvas>
@@ -309,7 +253,7 @@
                         <canvas id="055500" width="600" height="200"></canvas>
                         <canvas id="066600" width="600" height="200"></canvas>
                     </section>
-                        <section class="biceps" id="biceps">
+                        <section class="biceps">
                             <br><h1 style="color: white;">BICEPS</h1><br>
                             <canvas id="011110" width="700" height="300;" style="margin: auto;"></canvas>
                             <canvas id="022220" width="600" height="200"></canvas>
@@ -318,7 +262,7 @@
                             <canvas id="055550" width="600" height="200"></canvas>
                             <canvas id="066660" width="600" height="200"></canvas>
                         </section>
-                    <section class="triceps" id="triceps">
+                    <section class="triceps">
                         <br><h1 style="color: white;">TRICEPS</h1><br>
                         <canvas id="011111" width="700" height="300;" style="margin: auto;"></canvas>
                         <canvas id="022220" width="600" height="200"></canvas>
@@ -327,7 +271,7 @@
                         <canvas id="055550" width="600" height="200"></canvas>
                         <canvas id="066660" width="600" height="200"></canvas>
                     </section>
-                <section class="shoulder" id="shoulder">
+                <section class="shoulder">
                     <br><h1 style="color: white;">SHOULDER</h1><br>
                     <canvas id="0111111" width="700" height="300;" style="margin: auto;"></canvas>
                     <canvas id="022220" width="600" height="200"></canvas>
@@ -336,7 +280,7 @@
                     <canvas id="055550" width="600" height="200"></canvas>
                     <canvas id="066660" width="600" height="200"></canvas>
                 </section>
-            <section class="legs" id="legs">
+            <section class="legs">
                 <br><h1 style="color: white;">LEGS</h1><br>
                 <canvas id="01111111" width="700" height="300;" style="margin: auto;"></canvas>
                 <canvas id="022220" width="600" height="200"></canvas>
@@ -346,7 +290,7 @@
                 <canvas id="066660" width="600" height="200"></canvas>
             </section>
         </section>
-        <section class="footer" id="abouts">
+        <section class="footer">
             <div class="footer-txt-container">
                 <h5>OUR TEAM</h5>
                 <h1>MEET EXPERT TEAM</h1>
@@ -368,7 +312,7 @@
                         label: 'User Loyalty',
                         backgroundColor: 'rgba(255, 255, 255, 0.2)',
                         borderColor: 'white',
-                        data: [1050, 2000, 2050, 3000, 3050, 4000, 4050]
+                        data: [1000, 2000, 3000, 4000, 5000, 6000, 7000]
                     }]
                 },
                 options: {

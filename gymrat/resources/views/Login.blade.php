@@ -101,27 +101,9 @@
             width: 100%;
             height: auto;
             max-width: 600px;
-            animation: glitch 5s infinite;
         }
 
-        @keyframes glitch {
-            0% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(4px, -4px);
-            }
-            50% {
-                transform: translate(-4px, 4px);
-            }
-            75% {
-                transform: translate(2px, -2px);
-            }
-            100% {
-                transform: translate(0, 0);
-            }
-        }
-
+    
         @media screen and (max-width: 600px) {
             #login-container {
                 width: 90%;
@@ -129,9 +111,6 @@
             input, button, #welcome-text, #default-message, #terms {
                 padding: 10px;
                 font-size: small;
-            }
-            #glitch-image {
-                max-width: 100%;
             }
         }
 
@@ -164,7 +143,7 @@
         if (enteredPin.trim() === '') {
             alert('Please enter the Pincode.');
         } else if (enteredPin === '12345') {
-            window.location.href = '{{url('Users')}}';
+            window.location.href = '{{url('Home')}}';
         } else {
             alert('Incorrect Pincode! Please try again.');
         }
