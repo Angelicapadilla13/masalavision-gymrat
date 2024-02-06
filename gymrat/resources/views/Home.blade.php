@@ -157,7 +157,7 @@
                 height: 450px;
             }
 
-            .footer {
+            .about {
                 position: relative;
                 width: 100%;
                 height: 585px;
@@ -166,7 +166,7 @@
                 color: white;
             }
 
-            .footer-txt-container {
+            .about-txt-container {
                 position: relative;
                 top: 50px;
             }
@@ -177,7 +177,7 @@
 
             .orange-line {
                 border-bottom: 2px solid rgb(236, 126, 0);
-                width: 25%; 
+                width: 10%; 
                 margin: 20px auto;
             }
 
@@ -202,6 +202,21 @@
                 width: 100%; 
                 height: auto; 
             }
+
+            footer {
+            background-color: #5f3f3f;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            left: 0; 
+            width: 100%;
+            font-size: small;
+            font-family: Arial;
+            font-weight: bold;
+            z-index: 1; 
+        }
 
             @media only screen and (max-width: 601px) {
                 
@@ -244,13 +259,19 @@
 
                 .footer {
                     top: 2120px;
+
+                h1, h5, h6 {
+                    font-size: small;
+                }
+                
+
                 }
 
             }
 
         </style>
         <section class="navbar">
-            <p id="Gymrat-logo">Gymrat</p>
+            <p id="Gymrat-logo">GYMRAT</p>
             <section class="interaction">
                 <a href="#user"><button>Users</button></a>
                 <a href="#chest"><button>Chest</button></a>
@@ -264,6 +285,7 @@
                 <a href="{{url('Login')}}"><button>Logout</button></a>
             </section>
         </section>
+
 
         <section class="users" id="user">
             <img  id="phone" src="{{URL('images/phone.png')}}">
@@ -280,11 +302,12 @@
                 <div class="line line-5"></div>
             </div>
         </section>
+
         <section class="workouts-container">
             <p id="workout-p">Workout</p>
             <section class="chest" id="chest">
                 <br><h1 style="color: white;">CHEST</h1><br>
-                <canvas id="010000" width="700" height="300;" style="margin: auto;"></canvas>
+                <canvas id="010000" width="700" height="300;" style="margin: auto;"></canvas
                 <canvas id="020000" width="600" height="200"></canvas>
                 <canvas id="030000" width="600" height="200"></canvas>
                 <canvas id="040000" width="600" height="200"></canvas>
@@ -346,16 +369,46 @@
                 <canvas id="066660" width="600" height="200"></canvas>
             </section>
         </section>
-        <section class="footer" id="abouts">
-            <div class="footer-txt-container">
+
+        <section class="about" id="abouts">
+            <div class="about-txt-container"><br>
                 <h5>OUR TEAM</h5>
-                <h1>MEET EXPERT TEAM</h1>
+                <h1>WE ARE MASALAVISION GROUP</h1>
                 <div class="orange-line"></div>
                 <h6>WE ARE THE MASALVISION GROUP AT PHINMA-UNIVERSITY OF PANGASINAN, 
                 <br>WORKING ON ONE MAJOR PROJECT HANDLED BY FOUR PROFESSORS FROM CITE FACULTY.</h6>
             </div>
+            <table>
+        <tbody>
+          <tr>
+            <td><img src="{{URL('images/J.PNG')}}" alt="1"></td>
+            <td><img src="{{URL('images/BL.jpg')}}" alt="2"></td>
+            <td><img src="{{URL('images/K.PNG')}}" alt="3"></td>
+          </tr>
+          <tr>
+            <td><img src="{{URL('images/BL.jpg')}}" alt="4"></td>
+            <td><img src="{{URL('images/M.PNG')}}" alt="5"></td>
+            <td><img src="{{URL('images/BL.jpg')}}" alt="6"></td>
+          </tr>
+          <tr>
+            <td><img src="{{URL('images/B.PNG')}}" alt="7"></td>
+            <td><img src="{{URL('images/BL.jpg')}}" alt="8"></td>
+            <td><img src="{{URL('images/P.PNG')}}" alt="9"></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <br><br><br><br><br>
+      <br><br><br><br><br>
+      <br><br><br><br><br>
 
-        </section>
+      <footer>
+        <p>&copy; 2024 GYMRAT. ALL RIGHTS RESERVED.</p>
+    </footer>
+    </section>
+
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>

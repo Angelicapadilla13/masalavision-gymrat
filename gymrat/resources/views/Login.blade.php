@@ -39,7 +39,6 @@
             font-size: 35px;
             margin-top: 20px;
             color: white;
-            /* font-family: fantasy; */
         }
 
         #default-message {
