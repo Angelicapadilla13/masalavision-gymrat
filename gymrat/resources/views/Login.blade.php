@@ -10,6 +10,11 @@
 
     <style>
 
+        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&display=swap");
+        :root {
+            --clr-primary: #29a396;
+        }
+
         body {
             background: black            
             font-family: 'Inconsolata', monospace;
