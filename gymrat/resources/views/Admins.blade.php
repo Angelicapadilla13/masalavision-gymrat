@@ -1,159 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
-        <title>Gymrat</title>
-    </head>
-    <body style="background-color: black;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
 
-        <style>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
 
-            .navbar {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                background-color: grey;
-                padding: 10px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                z-index: 1000;
-            }
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
 
-            .navbar a {
-                color: white;
-                text-decoration: none;
-                margin-right: 20px;
-            }
+    .navbar .arrow {
+        font-size: 24px;
+        color: rgb(0, 191, 162);
+        text-decoration: none;
+        margin-right: 20px;
+        transition: transform 0.3s ease-in-out;
+    }
 
-            .navbar .arrow {
-                font-size: 40px;
-            }
+    .navbar .arrow:hover {
+        transform: scale(1.2);
+    }
 
+    .about {
+        text-align: center;
+        padding-top: 100px;
+    }
 
-             .about {
-                position: relative;
-                width: 100%;
-                height: 585px;
-                text-align: center;
-                background-color: black;
-                color: white;
-            }
+    .about h5 {
+        color: rgb(0, 143, 122);
+        font-size: 24px;
+    }
 
-            .about-txt-container {
-                position: relative;
-                top: 50px;
-            }
+    .about h1 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
 
-            .orange-line-container {
-                text-align: center;
-            }
+    .about h6 {
+        font-size: 15px;
+        line-height: 1.5;
+    }
 
-            .orange-line {
-                border-bottom: 2px solid rgb(236, 126, 0);
-                width: 15%; 
-                margin: 20px auto;
-            }
+    .orange-line {
+        border-bottom: 2px solid #008F7A;
+        width: 20%;
+        margin: 20px auto;
+    }
 
-            table {
-                position: relative;
-                top: 100px;
-                border-collapse: collapse;
-                width: 100%;
-            }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 50px;
+    }
 
-            th, td {
-                border: 1px solid #000000;
-                padding: 8px;
-                text-align: center;
-            }
+    td {
+        padding: 10px;
+    }
 
-            th {
-                background-color: #000000;
-            }
+    img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease-in-out;
+    }
 
-            img {
-                width: 100%; 
-                height: auto; 
-            }
+    img:hover {
+        transform: scale(1.1);
+    }
 
-            footer {
-            background-color: blue;
-            color: white;
-            padding: 5px;
-            text-align: center;
-            bottom: 0;
-            left: 0; 
-            width: 100%;
+    .footer {
+        background-color: #008F7A;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .about h1 {
             font-size: small;
-            font-family: Arial;
-            font-weight: bold;
-            z-index: 1; 
-           }
+        }
 
-            @media only screen and (max-width: 601px) {
-                .footer {
-                    top: 2120px;
+        .about h5 {
+            font-size: small;
+        }
 
-                h1, h5, h6 {
-                    font-size: small;
-                }
-                
+        .about h6 {
+            font-size: small;
+        }
+    }
 
-                }
+</style>
 
-            }
-
-    </style>
-  </head>
 <body>
+<header class="navbar">
+    <a href="{{url('Home')}}" class="arrow">⬅</a>
+</header>
 
-        <header class="navbar">
-        <a href="{{url('Home')}}" class="arrow">⬅</a>
-        </header>
-
-
-        <section class="about" id="abouts">
-            <div class="about-txt-container"><br>
-                <h5>OUR TEAM</h5>
-                <h1>WE ARE MASALAVISION GROUP</h1>
-                <div class="orange-line"></div>
-                <h6>WE ARE THE MASALVISION GROUP AT PHINMA-UNIVERSITY OF PANGASINAN, 
-                <br>WORKING ON ONE MAJOR PROJECT HANDLED BY FOUR PROFESSORS FROM CITE FACULTY.</h6>
-            </div>
-            <table>
+<section class="about" id="abouts">
+    <div>
+        <h5>OUR TEAM</h5>
+        <h1>WE ARE MASALAVISION GROUP</h1>
+        <div class="orange-line"></div>
+        <h6>WE ARE THE MASALAVISION GROUP AT PHINMA-UNIVERSITY OF PANGASINAN, <br>
+            WORKING ON ONE MAJOR PROJECT HANDLED BY FOUR PROFESSORS FROM CITE FACULTY.</h6>
+    </div>
+    <table>
         <tbody>
-          <tr>
+        <tr>
             <td><img src="{{URL('images/J.PNG')}}" alt="1"></td>
             <td><img src="{{URL('images/BL.jpg')}}" alt="2"></td>
             <td><img src="{{URL('images/K.PNG')}}" alt="3"></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td><img src="{{URL('images/BL.jpg')}}" alt="4"></td>
             <td><img src="{{URL('images/M.PNG')}}" alt="5"></td>
             <td><img src="{{URL('images/BL.jpg')}}" alt="6"></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td><img src="{{URL('images/B.PNG')}}" alt="7"></td>
             <td><img src="{{URL('images/BL.jpg')}}" alt="8"></td>
             <td><img src="{{URL('images/P.PNG')}}" alt="9"></td>
-          </tr>
+        </tr>
         </tbody>
-      </table>
-      
-      <br><br><br><br><br>
-      <br><br><br><br><br>
+    </table>
+</section><br><br>
 
-      <footer>
-        <p>&copy; 2024 GYMRAT. ALL RIGHTS RESERVED.</p>
-    </footer>
-    </section>
-
+<footer class="footer">
+    <p>&copy; 2024 GYMRAT. ALL RIGHTS RESERVED.</p>
+</footer>
 
 </body>
 </html>

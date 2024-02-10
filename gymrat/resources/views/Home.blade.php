@@ -218,8 +218,10 @@
     <ul class="nav">
       <li class="nav-item"><a href="#home">Home</a></li>
       <li class="nav-item"><a href="{{URL('Admins')}}">Admins</a></li>
+      <li class="nav-item"><a href="{{URL('Users')}}">Users</a></li>
       <li class="nav-item"><a href="{{URL('Account')}}">Account Center</a></li>
       <li class="nav-item"><a href="{{URL('Exercises')}}">Exercise Monitoring</a></li>
+      <li class="nav-item"><a href="{{URL('Login')}}">Logout</a></li>
     </ul>
   </div>
 </div>
@@ -228,8 +230,8 @@
   <div class="container flex">
     <div class="text">
       <h1 class="mb">
-        Complete Daily <br />
-        <span>Workout</span> At Home
+        Complete Daily <br>
+        Workout with <span>GYMRAT</span>
       </h1>
       <p class="mb">
         This web admin panel provides a centralized interface for managing
