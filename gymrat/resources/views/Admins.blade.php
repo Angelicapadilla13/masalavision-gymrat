@@ -51,7 +51,7 @@
     }
 
     .about h1 {
-        font-size: 35px;
+        font-size: 30px;
         margin-bottom: 20px;
     }
 

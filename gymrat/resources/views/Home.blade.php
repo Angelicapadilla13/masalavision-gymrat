@@ -142,7 +142,8 @@
         display: inline-block;
         margin-right: 30px;
         font-size: 18px;
-        font-weight: 400;
+        font-weight: bold;
+        margin-left: 5px;
     }
     
     .nav-item a {
@@ -217,10 +218,10 @@
     </div>
     <ul class="nav">
       <li class="nav-item"><a href="#home">Home</a></li>
-      <li class="nav-item"><a href="{{URL('Admins')}}">Admins</a></li>
-      <li class="nav-item"><a href="{{URL('Users')}}">Users</a></li>
-      <li class="nav-item"><a href="{{URL('Account')}}">Account Center</a></li>
       <li class="nav-item"><a href="{{URL('Exercises')}}">Exercise Monitoring</a></li>
+      <li class="nav-item"><a href="{{URL('Account')}}">Account Center</a></li>
+      <li class="nav-item"><a href="{{URL('Users')}}">Users</a></li>
+      <li class="nav-item"><a href="{{URL('Admins')}}">Admins</a></li>
       <li class="nav-item"><a href="{{URL('Login')}}">Logout</a></li>
     </ul>
   </div>
@@ -234,8 +235,8 @@
         Workout with <span>GYMRAT</span>
       </h1>
       <p class="mb">
-        This web admin panel provides a centralized interface for managing
-        and controlling various aspects of the website, such as account center and exercise monitoring.
+       For administrators, gain comprehensive oversight of the app's performance,
+       including exercise monitoring, account management, and user analytics, all from one centralized platform.
       </p>
     </div>
     <div class="visual">

@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymRat</title>
 
     <style>
-
-        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&display=swap");
-        :root {
-            --clr-primary: #29a396;
-        }
-
-        body {
-            background: black            
-            font-family: 'Inconsolata', monospace;
-        }
 
         body {
             margin: 0;
@@ -27,7 +14,8 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #000000;
+            background-color: black;
+            font-family: Arial;
         }
 
         #login-container {
@@ -44,6 +32,8 @@
             font-size: 35px;
             margin-top: 20px;
             color: white;
+            font-family: Arial;
+            font-weight: bold;
         }
 
         #default-message {
@@ -51,6 +41,7 @@
             margin: 10px 0;
             color: #888;
             font-family: Arial;
+            font-style: Italic;
         }
 
         form {
@@ -99,12 +90,25 @@
         #terms a:hover {
             text-decoration: none;
             color: #ff9d9d;
-}
+        }
 
-        #glitch-image {
+        #image {
             width: 100%;
             height: auto;
             max-width: 600px;
+            margin-top: 15px;
+        }
+
+        #qr-code-container {
+            width: 25%;
+            max-width: 300px; 
+            margin-top: 11%; 
+            margin-left: 37%;
+        }
+
+        #qr-code {
+            width: 100%;
+            height: auto;
         }
 
     
@@ -122,36 +126,42 @@
 </head>
 <body>
 
-    <center><img id="glitch-image" src="{{URL('images/logs.png')}}" alt="Glitch Image"></center>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-
     <div id="login-container">
-        <div id="welcome-text">Welcome to GymRat</div>
-        <div id="default-message">Sign up to access and monitor GymRat!</div><br>
+        <div id="welcome-text">WELCOME TO GYMRAT</div>
+        <div id="default-message">This website is designed exclusively for administrators!</div><br>
 
         <form id="login-form">
-        @csrf
-            <input style="font-family: 'Inconsolata', monospace;" type="password" placeholder="Enter the Pincode" id="password" required><br>
-            <button style="font-family: 'Inconsolata', monospace;"; type="button" onclick="login()">Continue</button>
+            @csrf
+            <input style="font-family: 'Inconsolata', monospace;" type="password" placeholder="ENTER THE ADMIN PINCODE" id="password" required><br>
+            <button style="font-family: 'Inconsolata', monospace;" type="button" onclick="login()">CONTINUE</button>
         </form>
 
         <div id="terms">
             By clicking Continue, you agree to our <a href="{{url('Terms and Condition')}}">Terms and Conditions</a>.
+
+
+        <div id="qr-code-container">
+        <img id="qr-code" src="{{URL('images/QR.png')}}" alt="QR Code">
+        </div>
+
         </div>
     </div>
 
+    <center><img id="image" src="{{URL('images/ban.png')}}" alt="Image"></center>   
+
+
     <script>
         function login() {
-        var enteredPin = document.getElementById('password').value;
+            var enteredPin = document.getElementById('password').value;
 
-        if (enteredPin.trim() === '') {
-            alert('Please enter the Pincode.');
-        } else if (enteredPin === '12345') {
-            window.location.href = '{{url('Home')}}';
-        } else {
-            alert('Incorrect Pincode! Please try again.');
+            if (enteredPin.trim() === '') {
+                alert('Please enter the Pincode.');
+            } else if (enteredPin === '12345') {
+                window.location.href = '{{url('Home')}}';
+            } else {
+                alert('Incorrect Pincode! Please try again.');
+            }
         }
-    }
     </script>
 
 </body>
