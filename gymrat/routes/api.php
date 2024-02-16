@@ -1,8 +1,15 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\ChestController;
+use App\Http\Controllers\ShoulderController;
+use App\Http\Controllers\TricepController;
+use App\Http\Controllers\BackController;
+use App\Http\Controllers\LegController;
+use App\Http\Controllers\BicepController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +20,17 @@ use App\Http\Controllers\Api\AuthController;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/  
-
-
+*/
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/auth/register',[AuthController::class, 'register']);
-Route::post('/auth/login',[AuthController::class, 'login']);
-Route::post('/auth/logout',[AuthController::class, 'logout'])->middleware('auth:sanctum');
+Route::apiResource('user', UserController::class);
+Route::apiResource('program', ProgramController::class);
+Route::apiResource('chest', ChestController::class);
+Route::apiResource('shoulder', ShoulderController::class);
+Route::apiResource('tricep', TricepController::class);
+Route::apiResource('bicep', BicepController::class);
+Route::apiResource('back', BackController::class);
+Route::apiResource('leg', LegController::class);
