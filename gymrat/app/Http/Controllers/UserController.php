@@ -1,24 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Hash;
-class AuthController extends Controller
-{
-    public function register(Request $request){
 
+class UserController extends Controller
+{   
+    public function index(){
+        $users = User::with('profile', 'program')->get();
+        return response()->json(['users' => $users]);
+    }
+        
+
+    public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'username'=>'required|min:4|max:100',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:8|max:100',
-            'confirm_password'=>'required|same:password',
-            'age'=>'required|min:2|max:100',
-            'gender'=>'required',
+            'confirm_password'=>'required|same:password'
         ]);
 
         if ($validator->fails()) {
@@ -29,12 +31,13 @@ class AuthController extends Controller
         };
         
         $user=User::create([
-            'username'=>$request->username,
             'email'=>$request->email,
-            'age'=>$request->age,
-            'gender'=>$request->gender,
             'password'=>Hash::make($request->password)
         ]);
+
+        $user -> profile()->create($request->input('profile'));
+        $user -> program()->create($request->input('program'));
+        
 
         return response()->json([
             'message'=>'Registration Succesful',
@@ -61,6 +64,7 @@ class AuthController extends Controller
             if(Hash::check($request->password,$user->password)){
                 $token=$user->createToken('auth-token')->plainTextToken;
                 return response()->json([
+                    'error'=>false,
                     'message'=>'Login Succesful',
                     'token'=>$token,
                     'data'=>$user
@@ -69,6 +73,7 @@ class AuthController extends Controller
             
             else{
                 return response()->json([
+                    'error'=>true,
                     'message'=>'Incorrect Password',
     
                 ],400);
@@ -89,3 +94,4 @@ class AuthController extends Controller
         ],200);
     }
 }
+
