@@ -185,6 +185,39 @@
         color: var(--clr-primary);
     }
 
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-right: 30px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #1d1f1e;
+        min-width: 160px;
+        z-index: 1;
+        padding: 12px 16px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .dropdown-content a:hover {
+        color: #29a396;
+    }
+
+
     @media screen and (max-width: 768px) {
         .container {
         width: 90%;
@@ -211,15 +244,34 @@
 </head>
 <body>
 
-<div class="menu">
+<div class="menu" id="home">
   <div class="container flex">
     <div class="logo">
       <img src="{{URL('images/logo.png')}}" alt="logo"/>
     </div>
     <ul class="nav">
       <li class="nav-item"><a href="#home">Home</a></li>
-      <li class="nav-item"><a href="{{URL('Exercises')}}">Exercise Monitoring</a></li>
-      <li class="nav-item"><a href="{{URL('Account')}}">Account Center</a></li>
+      <li class="nav-item dropdown" id="exerciseDropdown">
+        <a href="#" onclick="toggleDropdown('exerciseDropdown')">Exercise Monitoring &#9660;</a>
+        <div class="dropdown-content">
+            <a href="{{URL('Exercises')}}">Most Viewed</a>
+            <a href="{{URL('Exercises')}}">Chest</a>
+            <a href="{{URL('Exercises')}}">Back</a>
+            <a href="{{URL('Exercises')}}">Abs</a>
+            <a href="{{URL('Exercises')}}">Biceps</a>
+            <a href="{{URL('Exercises')}}">Triceps</a>
+            <a href="{{URL('Exercises')}}">Shoulder</a>
+            <a href="{{URL('Exercises')}}">Legs</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" id="accountDropdown">
+        <a href="#" onclick="toggleDropdown('accountDropdown')">Account Center &#9660;</a>
+        <div class="dropdown-content">
+            <a href="{{URL('Account')}}">Users</a>
+            <a href="{{URL('Account')}}">Gender</a>
+            <a href="{{URL('Account')}}">Age</a>
+        </div>
+      </li>
       <li class="nav-item"><a href="{{URL('Users')}}">Users</a></li>
       <li class="nav-item"><a href="{{URL('Admins')}}">Admins</a></li>
       <li class="nav-item"><a href="{{URL('Login')}}">Logout</a></li>
@@ -244,6 +296,13 @@
     </div>
   </div>
 </header>
+
+<script>
+  function toggleDropdown(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    dropdown.classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
