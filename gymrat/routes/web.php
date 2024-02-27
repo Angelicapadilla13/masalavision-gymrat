@@ -25,7 +25,7 @@ Route::get('Terms and Condition', function () {
     return view('Terms and Condition');
 });
 
-Route::view("Home", 'Home');
+Route::view("Dashboard", 'Dashboard');
 Route::view("Exercises", 'Exercises');
 Route::view("Account", 'Account');
 Route::view("Admins", 'Admins');

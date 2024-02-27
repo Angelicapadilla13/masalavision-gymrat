@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000000;
+            background-color: #eaeaea;
         }
 
         #container {
@@ -19,19 +19,28 @@
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 0;
         }
 
         h1 {
             color: #333;
+            font-size: 32px;
         }
 
         p {
             line-height: 1.5;
             color: #555;
+            font-size: 18px;
+        }
+
+        ol {
+            padding-left: 20px;
+            font-size: 18px;
         }
 
         #acceptCheckbox {
-            margin-top: 10px;
+            margin-top: 20px;
+            font-size: 18px;
         }
 
         #acceptLabel {
@@ -39,8 +48,9 @@
         }
 
         #submitBtn {
-            margin-top: 10px;
-            padding: 10px;
+            margin-top: 20px;
+            padding: 15px 20px;
+            font-size: 18px;
             background-color: #4caf50;
             color: #fff;
             border: none;
@@ -52,10 +62,13 @@
             background-color: #45a049;
         }
 
-
         @media screen and (max-width: 600px) {
-            #container {
-                padding: 10px;
+            h1 {
+                font-size: 28px;
+            }
+
+            p, ol, #acceptCheckbox, #submitBtn {
+                font-size: 16px;
             }
         }
 
@@ -64,15 +77,7 @@
                 font-size: 24px;
             }
 
-            p {
-                font-size: 14px;
-            }
-
-            #acceptCheckbox {
-                font-size: 14px;
-            }
-
-            #submitBtn {
+            p, ol, #acceptCheckbox, #submitBtn {
                 font-size: 14px;
             }
         }
@@ -116,4 +121,3 @@
 
 </body>
 </html>
-

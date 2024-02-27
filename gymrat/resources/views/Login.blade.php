@@ -15,7 +15,7 @@
             justify-content: center;
             height: 100vh;
             background-color: black;
-            font-family: Arial;
+            font-family: 'Roboto', sans-serif; 
         }
 
         #login-container {
@@ -32,7 +32,6 @@
             font-size: 35px;
             margin-top: 20px;
             color: white;
-            font-family: Arial;
             font-weight: bold;
         }
 
@@ -40,8 +39,7 @@
             font-size: small;
             margin: 10px 0;
             color: #888;
-            font-family: Arial;
-            font-style: Italic;
+            font-style: italic;
         }
 
         form {
@@ -58,6 +56,7 @@
             color: white;
             font-size: medium;
             font-weight: bold;
+            font-family: 'Roboto', sans-serif; 
         }
 
         button {
@@ -70,6 +69,7 @@
             cursor: pointer;
             font-weight: bold;
             font-size: medium;
+            font-family: 'Roboto', sans-serif; /
         }
 
         button:hover {
@@ -85,6 +85,7 @@
         #terms a {
             text-decoration: none;
             font-weight: bold; 
+            font-family: 'Roboto', sans-serif; 
         }
 
         #terms a:hover {
@@ -132,23 +133,20 @@
 
         <form id="login-form">
             @csrf
-            <input style="font-family: 'Inconsolata', monospace;" type="password" placeholder="ENTER THE ADMIN PINCODE" id="password" required><br>
-            <button style="font-family: 'Inconsolata', monospace;" type="button" onclick="login()">CONTINUE</button>
+            <input type="password" placeholder="ENTER THE ADMIN PINCODE" id="password" required><br>
+            <button type="button" onclick="login()">CONTINUE</button>
         </form>
 
         <div id="terms">
             By clicking Continue, you agree to our <a href="{{url('Terms and Condition')}}">Terms and Conditions</a>.
-
-
-        <div id="qr-code-container">
-        <img id="qr-code" src="{{URL('images/QR.png')}}" alt="QR Code">
         </div>
 
+        <div id="qr-code-container">
+            <img id="qr-code" src="{{URL('images/QR.png')}}" alt="QR Code">
         </div>
     </div>
 
     <center><img id="image" src="{{URL('images/ban.png')}}" alt="Image"></center>   
-
 
     <script>
         function login() {
@@ -157,7 +155,7 @@
             if (enteredPin.trim() === '') {
                 alert('Please enter the Pincode.');
             } else if (enteredPin === '12345') {
-                window.location.href = '{{url('Home')}}';
+                window.location.href = '{{url('Dashboard')}}';
             } else {
                 alert('Incorrect Pincode! Please try again.');
             }

@@ -55,15 +55,6 @@
       color: #3e9890;
     }
 
-    .sidebar .submenu {
-      display: none; 
-      margin-top: 10px;
-    }
-
-    .sidebar .submenu.show {
-      display: block; 
-    }
-
     .sidebar a {
       background-color: #121323;
       color: rgb(255, 255, 255);
@@ -106,11 +97,11 @@
     }
 
     .account-center h1 {
-      font-size: 2.5rem;
+      font-size: 35px;
       color: #333;
       text-align: center;
       border-radius: 10px;
-      margin-bottom: 0;
+      margin-bottom: 10px;
       margin-top: 5px;
     }
 
@@ -144,6 +135,8 @@
 
       #barChartContainer {
         margin-left: 0;
+        align-items: center;
+        width: 100%;
       }
 
       #ageChartContainer {
@@ -155,14 +148,15 @@
       }
 
       .account-center h1 {
-        font-size: 2rem; 
+        font-size: 2rem;
+        margin-top: 350px; 
       }
 
       .sidebar {
         width: 100%;
         top: 0;
         height: auto;
-        position: static;
+        position: fixed;
       }
 
       .sidebar h2 {
@@ -185,10 +179,6 @@
         padding: 10px;
       }
 
-      .sidebar .submenu {
-        margin-left: 20px;
-      }
-
       .content {
         margin-left: 0;
         padding-top: 100px;
@@ -207,27 +197,18 @@
 </head>
 <body>
 
-  <div class="sidebar">
+<div class="sidebar">
     <div class="logo">
-      <h2><i class="fas fa-chart-line"></i> GymRat</h2>
+        <h2><i class="fas fa-chart-line"></i> GymRat</h2>
     </div>
     <ul>
-      <li><a href="#" id="home"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#" id="users"><i class="fas fa-users"></i> Users</a></li>
-      <li><a href="#" id="account"><i class="fas fa-user"></i> Account Center</a></li>
-      <li>
-        <a href="#" id="exercise"><i class="fas fa-dumbbell"></i> Exercise Monitoring &nbsp;<i class="fas fa-caret-down"></i></a>
-        <ul class="submenu">
-          <li><a href="#"><i class="fas fa-angle-right"></i> Chest</a></li>
-          <li><a href="#"><i class="fas fa-angle-right"></i> Triceps</a></li>
-          <li><a href="#"><i class="fas fa-angle-right"></i> Biceps</a></li>
-          <li><a href="#"><i class="fas fa-angle-right"></i> Back</a></li>
-          <li><a href="#"><i class="fas fa-angle-right"></i> Legs</a></li>
-          <li><a href="#"><i class="fas fa-angle-right"></i> Shoulders</a></li>
-        </ul>
-      </li>
+        <li><a href="{{url('Dashboard')}}" id="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="{{url('Users')}}" id="users"><i class="fas fa-users"></i> Users</a></li>
+        <li><a href="{{url('Account')}}" id="account"><i class="fas fa-user"></i> Account Center</a></li>
+        <li><a href="{{url('Exercises')}}" id="exercise"><i class="fas fa-dumbbell"></i> Exercise Monitoring</a></li>
+        <li><a href="{{url('Login')}}" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
     </ul>
-  </div>
+</div>
 
   <div class="content">
     <div class="account-center">
@@ -320,19 +301,6 @@
             text: 'Age Distribution'
           }
         }
-      });
-    });
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const submenus = document.querySelectorAll('.submenu');
-      submenus.forEach(submenu => {
-        const parentMenuItem = submenu.parentElement.querySelector('a'); 
-        parentMenuItem.addEventListener('click', function(e) {
-          e.preventDefault();
-          submenu.classList.toggle('show');
-        });
       });
     });
   </script>
